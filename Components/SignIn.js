@@ -14,9 +14,8 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { signIn } from "next-auth/react";
 import Divider from "@mui/material/Divider";
-import GoogleIcon from "@mui/icons-material/Google";
 import { FcGoogle } from "react-icons/fc";
-import { FaGithub } from "react-icons/fa";
+
 function Copyright(props) {
   return (
     <Typography
