@@ -72,13 +72,17 @@ export default {
     },
     {
       name: 'closingDate',
-      type: 'string',
+      type: 'date',
       title: 'closingDate',
+      options: {
+        dateFormat: 'DD-MM-YYYY',
+        calendarTodayLabel: 'Today',
+      },
     },
     {
       name: 'applyCTA',
       type: 'string',
       title: 'applyCTA',
-    }
+    },
   ],
 }
