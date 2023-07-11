@@ -1,14 +1,14 @@
 import React from "react";
 import Navigation from "@/Components/Appbar";
-import { useSession,getSession } from "next-auth/react";
+import { useSession, getSession } from "next-auth/react";
 
-const Account = () => {
+const Account = (props) => {
   const { data: session } = useSession();
   if (session) {
     return (
       <>
         <Navigation></Navigation>
-        <h1>Welcome, {session.user.name}</h1>
+        <main>{props.children}</main>
       </>
     );
   }

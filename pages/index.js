@@ -28,7 +28,7 @@ export const getServerSideProps = async (context) => {
   } else
     return {
       redirect: {
-        destination: "/account",
+        destination: "/account/MyApplications",
       },
     };
 };

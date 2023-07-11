@@ -9,7 +9,7 @@ const login = () => {
   const { push } = useRouter();
   if (session) {
     {
-      push("/account");
+      push("/account/MyApplications");
     }
   } else {
     return (

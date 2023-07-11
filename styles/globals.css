@@ -85,3 +85,30 @@ a {
 .Google_icon:hover {
   scale: 2.2;
 }
+.JobsHeading{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.JobDetails{
+  margin: 5px;
+  width: 90%;
+  cursor: pointer;
+}
+p{
+  margin: 0;
+  padding: 0;
+}
+.JobHeading{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.foot{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+/* .JobsContainer{
+  border: 2px solid black;
+} */
