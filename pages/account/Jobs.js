@@ -1,8 +1,10 @@
 import Job from "@/Components/Job";
 import Account from ".";
 import { Container } from "@mui/material";
+import { createClient } from "next-sanity";
 
-export default function Jobs() {
+export default function Jobs(props) {
+  console.log(props);
   const jobs = [
     {
       jobTitle: "Software Engineer",
@@ -71,7 +73,7 @@ export default function Jobs() {
       <Account>
         <Container className="JobsContainer">
           <h1 className="JobsHeading">Jobs</h1>
-          {jobs.map((job) => (
+          {props.jobs.map((job) => (
             <Job
               key={job.jobTitle}
               title={job.jobTitle}
@@ -90,4 +92,18 @@ export default function Jobs() {
       </Account>
     </>
   );
+}
+
+export async function getServerSideProps(context) {
+  const client = createClient({
+    projectId: "p3s4qfsf",
+    dataset: "production",
+    useCdn: false,
+  });
+  const jobs = await client.fetch(`*[_type == "Job"]`);
+  return {
+    props: {
+      jobs,
+    },
+  };
 }
