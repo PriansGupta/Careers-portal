@@ -88,7 +88,7 @@ function Navigation() {
               }}
             >
               {pages.map((page) => (
-                <Link href={`/account/${page}`}>
+                <Link className="xyz" href={`/account/${page}`}>
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
                     <Typography textAlign="center">{page}</Typography>
                   </MenuItem>
@@ -117,7 +117,7 @@ function Navigation() {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Link href={`/account/${page}`}>
-                <Button
+                <Button 
                   key={page}
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: "white", display: "block" }}

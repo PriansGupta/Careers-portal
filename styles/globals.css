@@ -115,3 +115,7 @@ body::-webkit-scrollbar {
 .css-1plom3a-MuiPaper-root{
   box-shadow: none !important;
 }
+.xyz{
+  text-decoration: none;
+  color: rgb(47, 47, 47);
+}

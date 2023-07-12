@@ -7,11 +7,13 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
+import ButtonGroup from "@mui/material/ButtonGroup";
+import { setRevalidateHeaders } from "next/dist/server/send-payload";
 
 export default function Jobs(props) {
   const [JobsList, setJobs] = useState(props.jobs);
@@ -42,9 +44,17 @@ export default function Jobs(props) {
       NewJobs = NewJobs.filter((ele) => ele.salaryType === SalaryType);
     if (JobType !== "All")
       NewJobs = NewJobs.filter((ele) => ele.jobType === JobType);
-    // console.log(NewJobs);
     setJobs(NewJobs);
   };
+  const ClearFilterJobs = () => {
+    setJobType("All");
+    setLocation("All");
+    setRole("All");
+    setSalaryType("All");
+  };
+  useEffect(() => {
+    FilterJobs();
+  }, [Location, Role, SalaryType, JobType]);
   const filters = [
     {
       category: "Location",
@@ -137,27 +147,39 @@ export default function Jobs(props) {
               justifyContent="center"
               alignItems="center"
             >
-              <Button variant="contained" onClick={FilterJobs}>
-                Filter
-              </Button>
+              <ButtonGroup
+                variant="contained"
+                aria-label="outlined primary button group"
+              >
+                {/* <Button variant="contained" onClick={FilterJobs}>
+                  Filter
+                </Button> */}
+                <Button variant="contained" onClick={ClearFilterJobs}>
+                  Clear all filters
+                </Button>
+              </ButtonGroup>
             </Grid>
           </Box>
           <br></br>
-          {JobsList.length >0?JobsList.map((job) => (
-            <Job
-              key={job.jobTitle}
-              title={job.jobTitle}
-              organisation={job.organisation}
-              location={job.location}
-              type={job.jobType}
-              sector={job.sector}
-              salary={job.salary}
-              salaryType={job.salaryType}
-              description={job.description}
-              closing={job.closingDate}
-              cta={job.cta}
-            ></Job>
-          )):<h2 className="JobsHeading">No Jobs Found !</h2>}
+          {JobsList.length > 0 ? (
+            JobsList.map((job) => (
+              <Job
+                key={job.jobTitle}
+                title={job.jobTitle}
+                organisation={job.organisation}
+                location={job.location}
+                type={job.jobType}
+                sector={job.sector}
+                salary={job.salary}
+                salaryType={job.salaryType}
+                description={job.description}
+                closing={job.closingDate}
+                cta={job.cta}
+              ></Job>
+            ))
+          ) : (
+            <h2 className="JobsHeading">No Jobs Found !</h2>
+          )}
         </Container>
       </Account>
     </>

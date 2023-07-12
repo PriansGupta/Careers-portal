@@ -11,6 +11,10 @@ function Job(props) {
             <h3>{props.title}</h3>
             <h6>{`${props.organisation}, ${props.location}`}</h6>
           </div>
+          <div>
+            <p>{`Salary Type:  ${props.salaryType}`}</p>
+            <h6>{props.type}</h6>
+          </div>
         </div>
       </Card.Header>
       <Card.Body>
