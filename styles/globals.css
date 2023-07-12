@@ -119,3 +119,6 @@ body::-webkit-scrollbar {
   text-decoration: none;
   color: rgb(47, 47, 47);
 }
+.css-dillti{
+  box-shadow: none !important;
+}
