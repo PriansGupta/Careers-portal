@@ -9,7 +9,7 @@ export default function MyApplications() {
       <Account>
         <Container className="JobsContainer">
           <h1 className="JobsHeading">My Applications</h1>
-          <h3 className="JobsHeading">{`Welcome back ${session.user.name}`}</h3>
+          {/* <h3 className="JobsHeading">{`Welcome back ${session.user.name}`}</h3> */}
         </Container>
       </Account>
     </>

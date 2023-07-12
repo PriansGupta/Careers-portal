@@ -14,6 +14,7 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { signIn } from "next-auth/react";
 import Divider from "@mui/material/Divider";
+import Chip from "@mui/material/Chip";
 import { FcGoogle } from "react-icons/fc";
 
 function Copyright(props) {
@@ -80,8 +81,9 @@ export default function SignIn() {
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
             />
-            <Divider />
-            <Divider />
+            <Divider>
+              <Chip label="OR" />
+            </Divider>
             <br></br>
             <div className="Google">
               <div>
@@ -91,9 +93,6 @@ export default function SignIn() {
                 <FcGoogle></FcGoogle>
               </div>
             </div>
-            <br></br>
-            <Divider />
-            <Divider />
             <Button
               type="submit"
               fullWidth

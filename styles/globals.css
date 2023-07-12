@@ -74,7 +74,7 @@ a {
   justify-content: space-evenly;
   align-items: center;
 }
-.Google p{
+.Google p {
   font-weight: bold;
 }
 .Google_icon {
@@ -85,30 +85,33 @@ a {
 .Google_icon:hover {
   scale: 2.2;
 }
-.JobsHeading{
+.JobsHeading {
   align-items: center;
   justify-content: center;
   text-align: center;
 }
-.JobDetails{
+.JobDetails {
   margin: 5px;
   width: 90%;
   cursor: pointer;
 }
-p{
+p {
   margin: 0;
   padding: 0;
 }
-.JobHeading{
+.JobHeading {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.foot{
+.foot {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-/* .JobsContainer{
-  border: 2px solid black;
-} */
+body::-webkit-scrollbar {
+  display: none;
+}
+.css-1plom3a-MuiPaper-root{
+  box-shadow: none !important;
+}
