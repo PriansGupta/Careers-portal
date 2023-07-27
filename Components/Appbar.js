@@ -117,7 +117,7 @@ function Navigation() {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Link href={`/account/${page}`}>
-                <Button 
+                <Button
                   key={page}
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: "white", display: "block" }}
@@ -131,7 +131,10 @@ function Navigation() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt={session.user.name} src={session.user.image} />
+                <Avatar
+                  alt={session && session.user.name}
+                  src={session && session.user.image}
+                />
               </IconButton>
             </Tooltip>
             <Menu

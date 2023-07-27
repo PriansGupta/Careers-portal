@@ -1,20 +1,3 @@
-// {
-//     jobTitle: "Software Engineer",
-//     organisation: "Google",
-
-//     location: "Banglore",
-//     profession: "IT",
-//     jobType: "Full-time",
-//     sector: "Technology",
-//     salaryType: "Annual",
-//     salary: 80000,
-//     aboutRole: "Lorem ipsum dolor sit amet.",
-//     closingDate: "2023-07-31",
-//     applyCTA: "Apply Now",
-//     description:
-//       "We are seeking a skilled Software Engineer to join our team. You will be responsible for developing high-quality software solutions and collaborating with cross-functional teams.",
-//   },
-
 export default {
   name: 'Job',
   type: 'document',
@@ -83,6 +66,11 @@ export default {
       name: 'applyCTA',
       type: 'string',
       title: 'applyCTA',
+    },
+    {
+      name: 'JobId',
+      type: 'number',
+      title: 'JobId',
     },
   ],
 }
