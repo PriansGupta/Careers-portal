@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 const { colors: defaultColors } = require("tailwindcss/defaultTheme");
 
 const colors = {
@@ -39,18 +40,6 @@ module.exports = {
   ],
   theme: {
     colors: colors,
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
-      content: {
-        rightCurve: 'url("/images/right.png")',
-        leftCurve: 'url("/images/left.png")',
-        BannerCurve: 'url("/images/BannerTri.png")',
-      },
-    },
     screens: {
       sms: "900px",
       mds: "1200px",

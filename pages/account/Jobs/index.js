@@ -13,6 +13,7 @@ import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
+import { getSession } from "next-auth/react";
 
 export default function Jobs(props) {
   const [JobsList, setJobs] = useState(props.jobs);
@@ -184,6 +185,14 @@ export default function Jobs(props) {
 }
 
 export async function getServerSideProps(context) {
+  const session = await getSession(context);
+  if (!session) {
+    return {
+      redirect: {
+        destination: "/login",
+      },
+    };
+  }
   const client = createClient({
     projectId: "p3s4qfsf",
     dataset: "production",

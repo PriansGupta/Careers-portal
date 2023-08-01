@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { useSession, signIn } from "next-auth/react";
 import { useRouter } from "next/router";
@@ -6,10 +5,11 @@ import SignIn from "@/Components/SignIn";
 
 const login = () => {
   const { data: session } = useSession();
-  const { push } = useRouter();
+  const router = useRouter();
+  console.log(session)
   if (session) {
     {
-      push("/account/MyApplications");
+      router.push("/account/MyApplications");
     }
   } else {
     return (

@@ -2,18 +2,33 @@ import { MongoClient } from "mongodb";
 import Account from ".";
 import { Container } from "@mui/material";
 import { useSession, getSession } from "next-auth/react";
-import Applications from "@/Components/Applications";
+import ApplicationsList from "@/Components/ApplicationsList";
+import NotFound from "@/Components/NotFound";
 
 export default function MyApplications(props) {
-  // const { data: session } = useSession();
-  // console.log(JSON.parse(props.data));
+  const Applied = JSON.parse(props.data);
+  console.log(Applied);
+  let Element;
+
+  if (Applied.length > 0) {
+    Element = (
+      <div className="abc">
+        <div className="Applications-head">
+          <p className="w-3/4">Role</p>
+          <p className="w-1/4">Status</p>
+        </div>
+        <ApplicationsList props={JSON.parse(props.data)}></ApplicationsList>
+      </div>
+    );
+  } else {
+    Element = <NotFound></NotFound>;
+  }
   return (
     <>
       <Account>
         <Container className="JobsContainer">
-          <h1 className="JobsHeading">My Applications</h1>
-          {/* <h3 className="JobsHeading">{`Welcome back ${session.user.name}`}</h3> */}
-          <Applications props={JSON.parse(props.data)}></Applications>
+          <h1 className="JobsHeading">Applications</h1>
+          {Element}
         </Container>
       </Account>
     </>
@@ -22,6 +37,13 @@ export default function MyApplications(props) {
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
+  if (!session) {
+    return {
+      redirect: {
+        destination: "/login",
+      },
+    };
+  }
   const client = await MongoClient.connect(
     "mongodb+srv://priyanshg615:B80oBjOUGV2D30vn@careersportal.dlu5ln9.mongodb.net/?retryWrites=true&w=majority"
   );

@@ -10,7 +10,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main >
+      <main>
         <login></login>
       </main>
     </>
@@ -19,6 +19,7 @@ export default function Home() {
 
 export const getServerSideProps = async (context) => {
   const session = await getSession(context);
+  console.log(session);
   if (!session) {
     return {
       redirect: {

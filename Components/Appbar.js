@@ -13,6 +13,7 @@ import MenuItem from "@mui/material/MenuItem";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const pages = ["Jobs", "MyApplications"];
 const settings = ["Logout"];
@@ -21,6 +22,7 @@ function Navigation() {
   const { data: session } = useSession();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const router = useRouter();
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -35,7 +37,10 @@ function Navigation() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-
+  const LOGOUT = () => {
+    signOut();
+    router.push("/login");
+  };
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
@@ -154,7 +159,7 @@ function Navigation() {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={() => signOut()}>
+                <MenuItem key={setting} onClick={LOGOUT}>
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
