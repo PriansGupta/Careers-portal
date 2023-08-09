@@ -7,7 +7,7 @@ function ApplicationItem(props) {
       <div className="title">
         <h5 className="organisation">{props.title}</h5>
         <p className="organisation">
-          Organisation : <Chip className="chip" label={props.organisation} color="warning" />
+          <Chip className="chip" label={props.organisation} color="warning" />
         </p>
       </div>
       <div className="Applied">

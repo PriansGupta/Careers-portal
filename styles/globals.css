@@ -146,7 +146,8 @@ body::-webkit-scrollbar {
   font-size: large;
   cursor: pointer;
 }
-.Applications {
+
+/* .Applications {
   margin: auto;
   margin-top: 10px;
   width: 90%;
@@ -159,14 +160,12 @@ body::-webkit-scrollbar {
   flex-direction: row;
   padding: 5px;
   box-shadow: 1px 1px #888888;
-  /* border-radius: 10px; */
   margin-top: 20px;
 }
 .title {
   width: 55%;
   display: flex;
   flex-direction: row;
-  /* justify-content: flex-start; */
 }
 .title p {
   font-weight: bold;
@@ -179,6 +178,7 @@ body::-webkit-scrollbar {
   letter-spacing: 0.5px;
   color: blue;
   cursor: pointer;
+  font-size: large;
 }
 .Applied {
   font-weight: bold;
@@ -197,10 +197,143 @@ body::-webkit-scrollbar {
 }
 .chip {
   margin-left: 10px;
+} */
+
+.Applications {
+  margin: auto;
+  margin-top: 10px;
+  width: 90%;
+  max-height: 60vh;
+  overflow-y: scroll;
 }
+.ApplicationItem {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  box-shadow: 1px 1px #888888;
+  margin-top: 20px;
+}
+
+.title {
+  width: 55%;
+  display: flex;
+  flex-direction: row;
+}
+
+.title p {
+  font-weight: bold;
+  margin: 1px;
+  letter-spacing: 0.5px;
+  margin-left: 30px;
+}
+
+.title h5 {
+  margin: 1px 0px 1px 0px;
+  letter-spacing: 0.5px;
+  color: blue;
+  cursor: pointer;
+  font-size: large;
+}
+
+.Applied {
+  font-weight: bold;
+  color: white;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: self-end;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.organisation {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+}
+.chip {
+  margin-left: 10px;
+}
+@media (max-width: 600px) {
+  .ApplicationItem {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .organisation {
+    width: 70%;
+    display: flex;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title,
+  .Applied {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title h5 {
+    font-size: 14px; /* Reduced font size */
+    margin: 10px 0;
+  }
+
+  .title p {
+    font-size: 12px; /* Reduced font size */
+    margin: 5px 0;
+    margin-left: 0;
+  }
+
+  .Applied {
+    margin-top: 10px;
+  }
+
+  .chip {
+    font-size: 12px; /* Reduced chip font size */
+    padding: 4px 8px; /* Reduced chip padding */
+  }
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+  .ApplicationItem {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .title,
+  .Applied {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .organisation {
+    width: 80%;
+    display: flex;
+    display: flex;
+    flex-direction: column;
+  }
+  .title h5 {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+
+  .title p {
+    font-size: 14px;
+    margin: 5px 0;
+    margin-left: 0;
+  }
+
+  .Applied {
+    margin-top: 10px;
+  }
+}
+
 .lottie {
   margin: auto;
-  margin-top: 50px;
   width: 45%;
   height: 60%;
 }
@@ -208,10 +341,32 @@ body::-webkit-scrollbar {
   letter-spacing: 1px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
+
+@media (max-width: 768px) {
+  .lottie {
+    width: 60%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) and (orientation: landscape) {
+  .lottie {
+    width: 70%;
+    height: auto;
+  }
+}
+
+@media (max-width: 360px) and (orientation: portrait) {
+  .lottie {
+    width: 80%;
+    height: auto;
+  }
+}
+
 h1 {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   letter-spacing: 1px;
 }
 .abc {
-  width: 100%;  
+  width: 100%;
 }
