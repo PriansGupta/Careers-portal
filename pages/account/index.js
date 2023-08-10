@@ -9,6 +9,7 @@ const Account = (props) => {
       <>
         <Navigation></Navigation>
         <main>{props.children}</main>
+        <h1 classname="Jobsheading">{`Welcome, ${session.user.name}`}</h1>
       </>
     );
   }
