@@ -42,7 +42,7 @@ function Navigation() {
     router.push("/login");
   };
   return (
-    <AppBar position="sticky" color="success">
+    <AppBar position="fixed" color="success">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
