@@ -87,7 +87,7 @@ a {
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 45px;
 }
 .JobDetails {
   margin: 5px;
@@ -133,7 +133,7 @@ body::-webkit-scrollbar {
   height: 80vh;
 }
 .Applications-head {
-  margin-top: 20px;
+  margin-top: 45px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
